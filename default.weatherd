@@ -1,0 +1,1 @@
+DAEMON_OPTS="-u http://YOU_SERVER.COM/AddReading/ -p /var/run/weatherd.pid -n 2 -i 50"
