@@ -1,5 +1,5 @@
-#ifndef _Tx7Receiver_h
-#define _Tx7Receiver_h
+#ifndef _Tx17Receiver_h
+#define _Tx17Receiver_h
 
 #include <wiringPi.h>
 #include <stdint.h>
@@ -16,10 +16,10 @@ typedef uint8_t byte;
 #endif
 
 
-class Tx7Receiver {
+class Tx17Receiver {
 
   public:
-    Tx7Receiver(int gpioPin, int sensorId);
+    Tx17Receiver(int gpioPin, int sensorId);
     
     bool available();
     void resetAvailable();

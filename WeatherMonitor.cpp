@@ -6,7 +6,7 @@
   by @justy to provide a handy RF code sniffer
 */
 
-#include "Tx7Receiver.h"
+#include "Tx17Receiver.h"
 #include "HttpNotifier.h"
 #include <stdlib.h>
 #include <stdio.h>
@@ -72,7 +72,7 @@ int main(int argc, char *argv[]) {
         return 0;
     }
 
-    Tx7Receiver tx7_receiver(gpio_pin, probe_id);
+    Tx17Receiver tx17_receiver(gpio_pin, probe_id);
 
 #ifndef DEBUG
     HttpNotifier http_notifier(server_url);
@@ -88,14 +88,14 @@ int main(int argc, char *argv[]) {
    
     while(1) {
   
-        tx7_receiver.waitForValue();
+        tx17_receiver.waitForValue();
 #ifdef DEBUG
         printf("Value available...\n");
 #endif
-        if (tx7_receiver.available()) {
+        if (tx17_receiver.available()) {
     
             time(&current_time);
-            value = tx7_receiver.getReceivedValue();
+            value = tx17_receiver.getReceivedValue();
 
             if (!starting && fabs(last_value - value) > INCREMENT_LIMIT) {
                 // Ignore value as it is probaby bogus
@@ -135,7 +135,7 @@ int main(int argc, char *argv[]) {
                 last_value = value;
             }
  
-            tx7_receiver.resetAvailable();
+            tx17_receiver.resetAvailable();
         }
 
         starting = 0;

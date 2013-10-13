@@ -8,7 +8,7 @@ BIN=/usr/bin/weatherd
 
 all: $(EXE)
 
-$(EXE): Tx7Receiver.o WeatherMonitor.cpp HttpNotifier.o
+$(EXE): Tx17Receiver.o WeatherMonitor.cpp HttpNotifier.o
 	$(CXX) $(CXXFLAGS) $(LDFLAGS) $+ -o $@ -lwiringPi
 	
 

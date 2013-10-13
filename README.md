@@ -1,6 +1,6 @@
 # About
 
-WeatherMonitor is for receiving data from a Lacrosse TX7 transmitter using a Raspberry PI.
+WeatherMonitor is for receiving data from a Lacrosse TX17 transmitter using a Raspberry PI.
 
 The data can then be pushed to a remote server for further processing.
 
